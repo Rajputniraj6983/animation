@@ -15,48 +15,57 @@ class Homepage extends StatelessWidget {
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
           )),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                List.generate(8,(index) => Draggable(
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: Colors.red,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                      feedback:  Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: Colors.deepOrange,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                ),
-                )
-              ],
-            ),
-            Column(
-              children: [
-                List.generate(8, (index) =>
-                    DragTarget(builder: (context, candidateData, rejectedData) =>  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: Colors.green,
-                        border: Border.all(color: Colors.black)),
+        body: Padding( 
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  ...List.generate(7,(index) => Draggable(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(60),
+                                color: Colors.red,
+                                border: Border.all(color: Colors.black)),
+                          ),
+                        ),
+                        feedback:  Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(60),
+                              color: Colors.black,
+                              border: Border.all(color: Colors.black)),
+                        ),
                   ),
-                  ),
-                )
-              ],
-            ),
-          ],
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  ...List.generate(7, (index) =>
+                      DragTarget(builder: (context, candidateData, rejectedData) =>  Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(60),
+                            color: Colors.green,
+                            border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
         ));
   }
 }
