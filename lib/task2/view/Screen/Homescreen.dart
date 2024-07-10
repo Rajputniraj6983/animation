@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       appBar: AppBar(
         backgroundColor: Colors.red,
         leading: const Icon(
@@ -51,7 +52,7 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(height: 100),
           InkWell(
             onTap: () {
-              Navigator.of(context).pushNamed('/details');
+              Navigator.of(context).pushNamed('/DetailsScreen');
             },
             child: Hero(
               tag: 'box',

@@ -39,57 +39,10 @@ class DetailsScreen extends StatelessWidget {
                   minHeight: 8,
                 ),
               ),
-               SizedBox(height: 30),
-              Expanded(
-                child: ListView(
-                  children: [
-                    section('Previous - Thu', [
-                      taskItem('Meet Clients', true),
-                      taskItem('Design Sprint', true),
-                      taskItem('Icon Set Design for Mobile', true),
-                      taskItem('HTML/CSS Study', true),
-                    ]),
-                    section('Previous - Fri', [
-                      taskItem('Meet Clients', true),
-                      taskItem('Design Sprint', true),
-                      taskItem('Icon Set Design for Mobile', true),
-                      taskItem('HTML/CSS Study', false),
-                    ]),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget section(String title, List<Widget> tasks) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(
-            title,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ),
-        ...tasks,
-      ],
-    );
-  }
-
-  Widget taskItem(String title, bool isChecked) {
-    return ListTile(
-      leading: Checkbox(
-        value: isChecked,
-        activeColor: Colors.red,
-        onChanged: (bool? value) {},
-      ),
-      title: Text(title),
-      trailing: const Icon(Icons.alarm, color: Colors.grey),
     );
   }
 }
